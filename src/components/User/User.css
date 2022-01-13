@@ -1,0 +1,19 @@
+.User {
+    width: 400px;
+    border: 2px solid blue;
+    padding-left: 10px;
+    background: #d6f6f2;
+}
+
+.User h3, h2 {
+    text-align: center;
+    margin: 3px;
+}
+
+.UserAddress, .UserCompany {
+    padding-left: 30px;
+}
+
+.UserAddressGeo {
+    padding-left: 50px;
+}

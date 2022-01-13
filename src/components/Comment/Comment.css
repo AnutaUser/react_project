@@ -1,0 +1,10 @@
+.Comment {
+    width: 250px;
+    border: 1px solid #00ff8c;
+    margin: 5px;
+}
+
+.Comment h4, h3 {
+    text-align: center;
+    margin: 2px;
+}

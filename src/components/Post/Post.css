@@ -1,0 +1,10 @@
+.Post {
+    width: 200px;
+    border: 1px solid darkblue;
+    box-sizing: border-box;
+    padding: 2px;
+    background: #dfe8ec;
+}
+.Post>h4 {
+    margin: 2px;
+}

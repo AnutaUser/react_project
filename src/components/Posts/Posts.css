@@ -1,0 +1,6 @@
+.Posts {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 2px;
+    justify-content: space-evenly;
+}
