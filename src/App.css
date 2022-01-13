@@ -1,7 +1,7 @@
-body {
-    margin: 0 auto;
-    background: whitesmoke;
-}
-.UsersPosts {
+.Flight {
+    border: 3px solid #AAAAAA;
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 10px;
 }

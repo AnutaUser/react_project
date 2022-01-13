@@ -1,20 +1,13 @@
 import './App.css';
-import Users from "./components/Users/Users";
-import Posts from "./components/Posts/Posts";
-import Comments from "./components/Comments/Comments";
+
+import Flights from "./components/Flights/Flights";
 
 function App() {
-  return (
-      <div className="App">
-        <div className={'UsersPosts'}>
-          <Users/>
-          <Posts/>
+    return (
+        <div className="App">
+            <Flights/>
         </div>
-        <div>
-          <Comments/>
-        </div>
-      </div>
-  );
+    );
 }
 
 export default App;
