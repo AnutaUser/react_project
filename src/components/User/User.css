@@ -1,0 +1,27 @@
+.User {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    border: 2px solid #274195;
+    margin-bottom: 3px;
+}
+.User h5, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.User p {
+    margin: 1px;
+}
+
+.User button {
+    position: relative;
+    transform: translate(-50%, 0);
+    border-radius: 5px;
+    text-align: center;
+    background: #274195;
+    height: 30px;
+    width: 100px;
+    color: whitesmoke;
+}

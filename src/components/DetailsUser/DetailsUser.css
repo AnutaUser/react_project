@@ -1,0 +1,35 @@
+.DetailsUser {
+    width: 50%;
+    height: 100%;
+    padding-left: 20px;
+    border: 2px solid #274195;
+}
+.DetailsUser h2, h4 {
+    text-align: center;
+    margin: 8px;
+}
+
+.DetailsUser>p {
+    margin-bottom: 12px;
+    margin-top: 13px;
+}
+
+.DetailsUserAddress {
+    padding-left: 20px;
+}
+
+.DetailsUserAddressGeo {
+    padding-left: 40px;
+}
+.DetailsUser button {
+    margin-bottom: 8px;
+
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 5px;
+    text-align: center;
+    background: #274195;
+    width: 90%;
+    color: whitesmoke;
+}
