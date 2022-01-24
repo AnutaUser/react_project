@@ -1,0 +1,8 @@
+.Posts {
+    display: flex;
+    justify-content: space-evenly;
+}
+.Posts h1 {
+    text-align: center;
+    color: darkblue;
+}

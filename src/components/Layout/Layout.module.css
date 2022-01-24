@@ -1,0 +1,8 @@
+.outlet {
+    width: 95%;
+    margin: 0 auto;
+    height: calc( 100vh - 100px);
+    overflow: hidden;
+    overflow-y: auto;
+}
+

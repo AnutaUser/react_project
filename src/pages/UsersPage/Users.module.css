@@ -1,0 +1,11 @@
+.Users {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.Users h1 {
+    text-align: center;
+    color: rebeccapurple;
+}

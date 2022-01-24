@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import {Route, Routes} from 'react-router-dom';
+
+import css from './App.module.css';
+import {
+    HomePage,
+    NotFoundPage,
+    UsersPage,
+    PostsPage,
+    SingleUserPage,
+    SinglePostPage,
+    SinglePostCommentPage,
+    SingleUserPostsPage
+} from './pages';
+import {Layout} from './components';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>
+          <Routes>
+              <Route path={'/'} element={<Layout/>}>
+                  <Route path={'/'} element={<HomePage/>}/>
+                  <Route path={'users'} element={<UsersPage/>}>
+                      <Route path={':id'} element={<SingleUserPage/>}>
+                          <Route path={'posts'} element={<SingleUserPostsPage/>}/>
+                      </Route>
+                  </Route>
+                  <Route path={'posts'} element={<PostsPage/>}>
+                      <Route path={':id'} element={<SinglePostPage/>}>
+                          <Route path={'comments'} element={<SinglePostCommentPage/>}/>
+                      </Route>
+                  </Route>
+                  <Route path={'*'} element={<NotFoundPage/>}/>
+              </Route>
+          </Routes>
+      </>
   );
 }
 

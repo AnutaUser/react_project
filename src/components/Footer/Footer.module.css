@@ -1,0 +1,10 @@
+.footer {
+    min-height: 40px;
+    background: darkslateblue;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    color: whitesmoke;
+    font-size: 20px;
+    padding-right: 20px;
+}

@@ -1,0 +1,12 @@
+.User {
+    border: 3px solid gray;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 500px;
+}
+
+
+.User h3, h4 {
+    color: darkslateblue;
+}
+

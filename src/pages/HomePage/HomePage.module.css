@@ -1,0 +1,17 @@
+.HomePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.HomePage >h1 {
+    font-size: 50px;
+}
+
+.HomePage >h2 {
+    font-size: 40px;
+}
+
+.HomePage >img {
+    width: 500px;
+}

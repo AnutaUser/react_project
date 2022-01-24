@@ -1,0 +1,14 @@
+.SinglePost {
+    width: 500px;
+    border: 3px solid gray;
+    height: 250px;
+    margin-top: 80px;
+}
+
+.SinglePost h3, h2 , p {
+    margin: 8px;
+}
+
+.SinglePostNavLink {
+    text-align: center;
+}

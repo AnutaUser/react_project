@@ -1,0 +1,11 @@
+.Post {
+    border: 3px solid gray;
+    width: 500px;
+    margin-bottom: 10px;
+}
+
+.Post h3, h4 {
+    text-align: center;
+    color: darkslateblue;
+    margin: 10px;
+}
