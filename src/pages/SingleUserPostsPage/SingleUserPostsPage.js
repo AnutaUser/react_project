@@ -5,15 +5,10 @@ import {postService} from '../../services';
 import css from './SingleUserPosts.module.css';
 
 const SingleUserPostsPage = () => {
-    const [post, setPost] = useState();
+    const [post, setPost] = useState(null);
     const {userId} = useParams();
-    // const {state} = useLocation();
 
     useEffect(() => {
-    //     if (state){
-    //         setPost(state);
-    //     return
-    //     }
         postService.getByUserId(userId).then(value => setPost({value}))
     }, [])
 
