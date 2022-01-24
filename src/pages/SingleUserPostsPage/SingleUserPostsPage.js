@@ -1,4 +1,4 @@
-import {useLocation, useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import React, {useEffect, useState} from 'react';
 
 import {postService} from '../../services';
@@ -10,7 +10,7 @@ const SingleUserPostsPage = () => {
 
     useEffect(() => {
         postService.getByUserId(userId).then(value => setPost({value}))
-    }, [])
+    }, [userId])
 
     return (
         <div className={css.SingleUserPosts}>

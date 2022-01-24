@@ -21,7 +21,7 @@ const SinglePostCommentPage = () => {
 
     useEffect(() => {
         commentService.getByPostId(postId).then(value => setComment({...value}));
-    }, []);
+    }, [postId]);
 
     return (
         <div>
