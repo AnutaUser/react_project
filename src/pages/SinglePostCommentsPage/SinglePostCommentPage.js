@@ -3,11 +3,12 @@ import {useNavigate, useParams} from 'react-router-dom';
 
 import {commentService} from '../../services';
 import css from './SinglePostComment.module.css'
+import {Comment} from "../../components";
 
 const SinglePostCommentPage = () => {
     const {postId} = useParams();
     console.log(useParams());
-    const [comment, setComment] = useState(null);
+    const [comments, setComments] = useState([]);
 
     const navigate = useNavigate();
 
@@ -20,23 +21,17 @@ const SinglePostCommentPage = () => {
     }
 
     useEffect(() => {
-        commentService.getByPostId(postId).then(value => setComment({...value}));
+        commentService.getByPostId(postId).then(value => console.log(setComments([...value])));
     }, [postId]);
 
     return (
-        <div>
-            {comment && (
-                <div className={css.SinglePostComment}>
-                    <p>PostId: {comment.postId}</p>
-                    <p>Id: {comment.id}</p>
-                    <h2>Name: {comment.name}</h2>
-                    <h4>Email: {comment.email}</h4>
-                    <p>Body: {comment.body}</p>
-                    <button onClick={home}>Home</button>
-                    <button onClick={back}>Back</button>
-                </div>
-            )}
-        </div>
+        <div className={css.SinglePostComment}>
+            <div>
+                {comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
+            </div>
+            <button onClick={home}>Home</button>
+            <button onClick={back}>Back</button>
+    ) </div>
     );
 };
 

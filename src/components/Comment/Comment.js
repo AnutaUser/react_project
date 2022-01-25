@@ -6,11 +6,14 @@ const Comment = ({comment: {postId, id, name, email, body}}) => {
 
     return (
         <div className={css.Comment}>
-            <h4>PostId: {postId}</h4>
-            <h4>Id: {id}</h4>
+            <b>
+                <p>PostId: {postId}</p>
+                <p>Id: {id}</p>
+            </b>
             <h4>Name: {name}</h4>
             <h4>Email: {email}</h4>
-            <h4>Body: {body}</h4>
+            <p>Body: {body}</p>
+            <hr/>
         </div>
     );
 };

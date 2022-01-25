@@ -18,3 +18,10 @@
     text-align: center;
     margin: 6px;
 }
+
+.SingleUserPostsBtn {
+    position: relative;
+    left: 75%;
+    transform: translate(-50%, 0);
+    width: 95%;
+}

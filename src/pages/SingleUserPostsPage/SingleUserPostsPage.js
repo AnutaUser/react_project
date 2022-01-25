@@ -1,29 +1,29 @@
-import {useParams} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import React, {useEffect, useState} from 'react';
 
 import {postService} from '../../services';
 import css from './SingleUserPosts.module.css';
+import {UserPosts} from '../../components';
 
 const SingleUserPostsPage = () => {
-    const [post, setPost] = useState(null);
+    const [posts, setPosts] = useState([]);
     const {userId} = useParams();
 
     useEffect(() => {
-        postService.getByUserId(userId).then(value => setPost({value}))
+        postService.getByUserId(userId).then(value => console.log(setPosts([...value])))
     }, [userId])
 
     return (
         <div className={css.SingleUserPosts}>
-            {post && (
-                <div>
-                    <h4>UserId: {post.userId}</h4>
-                    <h4>Id: {post.id}</h4>
-                    <h3>Title: {post.title}</h3>
-                    <p>Body: {post.body}</p>
-                </div>
-            )
+            {posts.map(post => <UserPosts key={post.id} post={post}/>)
             }
+            <div className={css.SingleUserPostsBtn}>
+                <Link to='/users'>
+                    <button>Back to users</button>
+                </Link>
+            </div>
         </div>
+
     )
 };
 
