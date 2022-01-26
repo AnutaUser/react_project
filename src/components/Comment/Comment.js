@@ -2,7 +2,8 @@ import React from 'react';
 
 import css from './Comment.module.css';
 
-const Comment = ({comment: {postId, id, name, email, body}}) => {
+const Comment = ({comment}) => {
+    const {postId, id, name, email, body} = comment
 
     return (
         <div className={css.Comment}>
@@ -10,8 +11,8 @@ const Comment = ({comment: {postId, id, name, email, body}}) => {
                 <p>PostId: {postId}</p>
                 <p>Id: {id}</p>
             </b>
-            <h4>Name: {name}</h4>
-            <h4>Email: {email}</h4>
+            <h4 className={css.CommentH4}>Name: {name}</h4>
+            <h4 className={css.CommentH4}>Email: {email}</h4>
             <p>Body: {body}</p>
             <hr/>
         </div>

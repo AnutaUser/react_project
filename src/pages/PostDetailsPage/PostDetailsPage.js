@@ -19,17 +19,19 @@ const PostDetailsPage = () => {
 
 
     return (
-        <div className={css.SinglePost}>
+        <div className={css.PostDetails}>
             {post && (
                 <div>
-                    <div className={css.SinglePostNavLink}>
+                    <div className={css.PostDetailsLink}>
                         <Link to='/posts'>Back</Link>
                     </div>
+
                     <p>UserId: {post.userId}</p>
                     <h3>Id: {post.id}</h3>
                     <h2>Title: {post.title}</h2>
                     <p>Body: {post.body}</p>
-                    <div className={css.SinglePostNavLink}>
+
+                    <div className={css.PostDetailsLink}>
                         <Link to={'comments'}>
                             <button>Comments</button>
                         </Link>

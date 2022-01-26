@@ -1,9 +1,14 @@
 import React from 'react';
 
-const Album = () => {
+import css from './Album.module.css';
+
+const Album = ({album:{userId, id, title}}) => {
+
     return (
-        <div>
-            Album
+        <div className={css.Album}>
+            <p>UserId: {userId}</p>
+            <p>Id: {id}</p>
+            <h2>Title: {title}</h2>
         </div>
     );
 };

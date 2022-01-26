@@ -1,5 +1,5 @@
-.SinglePostComment {
-    border: 3px solid gray;
+.PostDetailsComment {
+    border: 3px solid #a7243b;
     margin-top: 20%;
     width: 500px;
 }
@@ -9,6 +9,7 @@ button {
     left: 27%;
     transform: translate(-50%, 0);
     width: 47%;
-    background: darkslateblue;
+    background: #8e108b;
     color: whitesmoke;
+    border-radius: 5px;
 }

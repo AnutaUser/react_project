@@ -8,10 +8,12 @@ const User = ({user}) => {
 
     return (
         <div className={css.User}>
-                <Link to={id.toString()} state={user}>
-                    <h4>Id: {id}</h4>
-                    <h3>Name: {name}</h3>
-                </Link>
+            <h3>{id}. {name}</h3>
+            <div>
+                <Link to={id.toString()} state={user}><button  className={css.UserBtn}>User details</button></Link>
+                <Link to={'albums'}><button  className={css.UserBtn}>User albums</button></Link>
+            </div>
+
         </div>
     );
 };

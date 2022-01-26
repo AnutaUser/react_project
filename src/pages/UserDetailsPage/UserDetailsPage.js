@@ -11,10 +11,10 @@ const UserDetailsPage = () => {
 
     useEffect(() => {
         if (state) {
-            setUser(state);
+            (setUser(state));
             return;
         }
-        userService.getById(id).then(value => setUser({...value}));
+        userService.getById(id).then(value => setUser([...value]));
     }, []);
 
     return (

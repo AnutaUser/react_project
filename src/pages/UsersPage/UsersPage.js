@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Outlet} from 'react-router-dom';
 
 import {userService} from '../../services';
-import {User} from '../../components';
+import {Album, User} from '../../components';
 import css from './Users.module.css';
 
 const UsersPage = () => {

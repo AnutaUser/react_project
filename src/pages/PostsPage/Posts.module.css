@@ -1,8 +1,10 @@
 .Posts {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 10%;
 }
-.Posts h1 {
+.PostsH1 {
     text-align: center;
-    color: darkblue;
+    color: #8e108b;
 }

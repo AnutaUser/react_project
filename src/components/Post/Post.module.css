@@ -1,11 +1,11 @@
 .Post {
-    border: 3px solid gray;
+    border: 3px solid #a7243b;
     width: 500px;
     margin-bottom: 10px;
 }
 
-.Post h3, h4 {
+.PostH4, .PostH3 {
     text-align: center;
-    color: darkslateblue;
+    color: black;
     margin: 10px;
 }

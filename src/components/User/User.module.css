@@ -1,12 +1,17 @@
 .User {
-    border: 3px solid gray;
-    margin-bottom: 10px;
-    text-align: center;
+    border: 3px solid grey;
+    justify-content: space-between;
+    align-items: center;
     width: 500px;
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
 }
 
-
-.User h3, h4 {
-    color: darkslateblue;
+.UserBtn {
+    width: 120px;
+    height: 30px;
+    margin-right: 5px;
 }
 

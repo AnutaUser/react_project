@@ -16,7 +16,7 @@ const PostsPage = () => {
     return (
         <div className={css.Posts}>
             <div>
-                <h1>Posts</h1>
+                <h1 className={css.PostsH1}>POSTS</h1>
                 {posts.map(post => <Post key={post.id} post={post}/>)}
             </div>
             <Outlet/>
