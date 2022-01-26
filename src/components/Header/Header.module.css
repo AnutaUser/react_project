@@ -1,19 +1,18 @@
 .header {
     min-height: 60px;
-    background: darkslateblue;
+    background: #b43f54;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-
 }
 
 .header a {
     color: whitesmoke;
-    font-size: 30px;
+    font-size: 40px;
     text-decoration: none;
 }
 
 .header a[class='active'] {
     text-decoration: underline;
-    color: white;
+    color: #f55ef3;
 }

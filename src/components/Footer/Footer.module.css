@@ -1,6 +1,6 @@
 .footer {
-    min-height: 40px;
-    background: darkslateblue;
+    min-height: 30px;
+    background: #b43f54;
     display: flex;
     justify-content: right;
     align-items: center;

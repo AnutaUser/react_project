@@ -2,9 +2,9 @@ import React, {useEffect, useState} from 'react';
 import {Outlet, useLocation, useParams, Link} from 'react-router-dom';
 
 import {postService} from '../../services';
-import css from './SinglePost.module.css';
+import css from './PostDetails.module.css';
 
-const SinglePostPage = () => {
+const PostDetailsPage = () => {
     const {id} = useParams();
     const [post, setPost] = useState(null);
     const {state} = useLocation();
@@ -41,4 +41,4 @@ const SinglePostPage = () => {
     );
 };
 
-export {SinglePostPage};
+export {PostDetailsPage};

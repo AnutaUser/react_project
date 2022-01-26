@@ -2,10 +2,10 @@ import React, {useEffect, useState} from 'react';
 import {useNavigate, useParams} from 'react-router-dom';
 
 import {commentService} from '../../services';
-import css from './SinglePostComment.module.css'
+import css from './PostDetailsComments.module.css'
 import {Comment} from "../../components";
 
-const SinglePostCommentPage = () => {
+const PostDetailsCommentsPage = () => {
     const {postId} = useParams();
     console.log(useParams());
     const [comments, setComments] = useState([]);
@@ -35,4 +35,4 @@ const SinglePostCommentPage = () => {
     );
 };
 
-export {SinglePostCommentPage};
+export {PostDetailsCommentsPage};

@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {useLocation, useParams, Outlet, NavLink} from 'react-router-dom';
+import {useLocation, useParams, Outlet, Link} from 'react-router-dom';
 
 import {userService} from '../../services';
-import css from './SingleUser.module.css';
+import css from './UserDetails.module.css';
 
-const SingleUserPage = () => {
+const UserDetailsPage = () => {
     const {id} = useParams();
     const [user, setUser] = useState(null);
     const {state} = useLocation();
@@ -43,9 +43,9 @@ const SingleUserPage = () => {
                         <p className={css.SingleUserAddress}>Bs: {user.company.bs}</p>
                     </p>
                     <div>
-                        <NavLink to={'posts'}>
+                        <Link to={'posts'}>
                             <button>Posts</button>
-                        </NavLink>
+                        </Link>
                     </div>
                 </div>
             )}
@@ -54,4 +54,4 @@ const SingleUserPage = () => {
     );
 };
 
-export {SingleUserPage};
+export {UserDetailsPage};

@@ -2,10 +2,10 @@ import {Link, useParams} from 'react-router-dom';
 import React, {useEffect, useState} from 'react';
 
 import {postService} from '../../services';
-import css from './SingleUserPosts.module.css';
+import css from './UserDetailsPosts.module.css';
 import {UserPosts} from '../../components';
 
-const SingleUserPostsPage = () => {
+const UserDetailsPostsPage = () => {
     const [posts, setPosts] = useState([]);
     const {userId} = useParams();
 
@@ -27,4 +27,4 @@ const SingleUserPostsPage = () => {
     )
 };
 
-export {SingleUserPostsPage};
+export {UserDetailsPostsPage};
