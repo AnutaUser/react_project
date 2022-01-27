@@ -2,7 +2,8 @@ import React from 'react';
 
 import css from './Album.module.css';
 
-const Album = ({album:{userId, id, title}}) => {
+const Album = ({album}) => {
+    const {userId, id, title} = album;
 
     return (
         <div className={css.Album}>

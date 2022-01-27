@@ -6,9 +6,12 @@ import {albumService} from '../../services';
 import {Album} from '../../components';
 
 const UserAlbumsPage = () => {
+
     const {userId} = useParams();
+    console.log(userId)
 
     const [albums, setAlbums] = useState([]);
+    console.log(albums)
 
     useEffect(() => {
         albumService.getByUserId(userId).then(value => console.log(setAlbums([...value])))

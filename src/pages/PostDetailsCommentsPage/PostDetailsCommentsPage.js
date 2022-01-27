@@ -4,13 +4,14 @@ import {useNavigate, useParams} from 'react-router-dom';
 import css from './PostDetailsComments.module.css'
 import {commentService} from '../../services';
 import {Comment} from "../../components";
-import {urls} from "../../configs/urls";
 
 const PostDetailsCommentsPage = () => {
 
     const {postId}= useParams();
+    console.log(postId)
 
-    const [comments, setComments] = useState(null);
+    const [comments, setComments] = useState([]);
+    console.log(comments)
 
     const navigate = useNavigate();
 
@@ -23,14 +24,13 @@ const PostDetailsCommentsPage = () => {
     }
 
     useEffect(() => {
-            commentService.getByPostId(postId).then(value => console.log(setComments([...value])));
+            commentService.getByPostId(postId).then(value => setComments([...value]));
     }, [postId]);
 
     return (
         <div className={css.PostDetailsComment}>
             <div>
-
-                {comments && comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
+                {comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
             </div>
             <button onClick={home}>Home</button>
             <button onClick={back}>Back</button>
