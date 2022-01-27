@@ -8,7 +8,7 @@ import {Album} from '../../components';
 const UserAlbumsPage = () => {
 
     const {userId} = useParams();
-    console.log(userId)
+    console.log(userId);
 
     const [albums, setAlbums] = useState([]);
     console.log(albums)
