@@ -1,0 +1,13 @@
+.Forms {
+    display: flex;
+    margin: 30px;
+    justify-content: center;
+
+}
+
+.Pets {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    margin: 0 auto;
+}
