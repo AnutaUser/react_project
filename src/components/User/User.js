@@ -11,7 +11,7 @@ const User = ({user}) => {
             <h3>{id}. {name}</h3>
             <div>
                 <Link to={id.toString()} state={user}><button  className={css.UserBtn}>User details</button></Link>
-                <Link to={'albums'}><button  className={css.UserBtn}>User albums</button></Link>
+                <Link to={id.toString() + '/albums'}><button  className={css.UserBtn}>User albums</button></Link>
             </div>
 
         </div>

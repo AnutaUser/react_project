@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
+import {useParams} from 'react-router-dom';
 
 import css from './UserAlbumsPhotos.module.css';
-import {useParams} from 'react-router-dom';
 import {photoService} from '../../services';
+import {Photo} from '../../components';
 
 const UserAlbumsPhotosPage = () => {
     const {albumId} = useParams();
@@ -15,8 +16,8 @@ const UserAlbumsPhotosPage = () => {
     }, [albumId]);
 
     return (
-        <div>
-            UserAlbumsPhotosPage
+        <div className={css.UserAlbumsPhoto}>
+            {photos.map(photo => <Photo key={photo.id} photo={photo}/>)}
         </div>
     );
 };
