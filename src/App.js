@@ -1,52 +1,38 @@
 import {useReducer} from "react";
 
-import css from "./Forms.module.css";
-import {Cat} from "./components";
-import {Dog} from "./components";
+import {Cats, Dogs, Form} from "./components";
+import css from "./Form.module.css";
 
 const reducer = (state, action) => {
-
-    // if (action.type === "cat") {
-    //     return {...state, cats: state.cats + 1};
-    // } else if (action.type === "dog") {
-    //     return {...state, dog: state.dog + 1};
-    // } else if (action.type === "delDog") {
-    //     return {};
-    // } else if (action.type === "delDog") {
-    //     return {};
-    // }
+    if (action.type === 'addCat') {
+        return {...state, cats: [...state.cats, {id: new Date().getTime(), name: action.payload.cat}]}
+    }
+    if (action.type === 'addDog') {
+        return {...state, dogs: [...state.dogs, {id: new Date().getTime(), name: action.payload.dog}]}
+    }
+    if (action.type === 'delCat') {
+        return {...state, cats: state.cats.filter(cat => cat.id !== action.payload.id)}
+    }
+    if (action.type === 'delDog') {
+        return {...state, dogs: state.dogs.filter(dog => dog.id !== action.payload.id)};
+    } else {
+        return state;
+    }
 }
 
 function App() {
-    const [state, dispatch] = useReducer(reducer, {cats: 'Myrchyk', dogs: 'Tuzik'});
-    const save = () => {
-        dispatch({...state, cats: state.cats})
-        console.log(dispatch())
-    };
 
-
-    const pats = (e) => {
-        e.preventDefault()
-        console.log(state)
-    }
+    const [{cats, dogs}, dispatch] = useReducer(reducer, {cats: [], dogs: []})
 
     return (
 
         <div>
-            <div className={css.Forms}>
-                <form onSubmit={pats}>
-                    <label>Add CAT: <input type="text" value={state.cats} name={"cats"} onChange={save}/></label>
-                    <button>Save</button>
-                </form>
-
-                <form>
-                    <label>Add DOG: <input type="text" value={state.dogs} onChange={save}/>
-                        <button>Save</button>
-                    </label>
-                </form>
+            <Form dispatch={dispatch}/>
+            <div className={css.Pets}>
+                <Cats cats={cats} dispatch={dispatch}/>
+                <Dogs dogs={dogs} dispatch={dispatch}/>
             </div>
 
-            <hr/>
         </div>
     );
 }

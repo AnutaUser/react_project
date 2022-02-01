@@ -1,10 +1,11 @@
-import React from 'react';
-import {onHidden} from "web-vitals/dist/modules/lib/onHidden";
+import React from "react";
 
-const Cat = () => {
+const Cat = ({cat:{id, name}, dispatch}) => {
+
     return (
         <div>
-            <button onClick={()=> onHidden}>Delete</button>
+            {name}
+            <button onClick={() => dispatch({type:'delCat', payload:{id}})}>Delete</button>
         </div>
     );
 };
