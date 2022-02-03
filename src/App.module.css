@@ -1,0 +1,11 @@
+.App {
+    width: 600px;
+    background: aqua;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.Pets {
+    display: flex;
+    justify-content: space-between;
+}
