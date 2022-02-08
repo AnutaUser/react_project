@@ -1,0 +1,14 @@
+.Car {
+    border: 2px solid grey;
+    width: 200px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.Car>button {
+    height: 30px;
+}
+
