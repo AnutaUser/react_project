@@ -1,7 +1,8 @@
-const baseURL = 'http://91.201.233.14/api/v2'
-
-export default baseURL;
+const baseURL = 'https://developers.themoviedb.org/3'
 
 export const urls = {
-    cars: '/cars'
+    movies: `/discover/movie?api_key=${process.env.REACT_APP_WEATHER_API_KEY}`,
+    genres: `/genre/movie/list?api_key=${process.env.REACT_APP_WEATHER_API_KEY}`
 }
+
+export default baseURL;
