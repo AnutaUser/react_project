@@ -10,20 +10,19 @@ export const getAllMovies = createAsyncThunk(
             return console.log(movies);
         } catch (e) {
             return rejectWithValue(e.message);
-
         }
     }
 );
 
 export const getSingleMovieById = createAsyncThunk(
     'movieSlice/getSingleMovieById',
-    async ({id}, {dispatch}) => {
+    async ({id}, {dispatch, rejectWithValue}) => {
         try {
             const singleMovie = await moviesService.getById(id)
             dispatch(getSingleMovieById({data: singleMovie}))
 
         } catch (e) {
-            console.log(e)
+            return rejectWithValue(e.message);
         }
     }
 );
@@ -47,7 +46,7 @@ const movieSlice = createSlice({
             state.movie = action.payload.data
         },
         getMoviesByPage: (state, action) => {
-            if (action.payload.data === 'previos') {
+            if (action.payload.data === 'previous') {
                 state.page = state.page - 1
                 if (state.page < 1) {
                     state.page = 1

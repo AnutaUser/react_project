@@ -4,10 +4,10 @@ import {useDispatch, useSelector} from "react-redux";
 import {getAllMovies, getMoviesByPage} from "../../store";
 import {Movie} from "../../components";
 
-
 const MoviesPage = () => {
 
-    const {movies, page} = useSelector(state => state['movieReducer']);
+    const {movies, page, status, error} = useSelector(state => state['movieReducer']);
+    console.log(state)
 
     const dispatch = useDispatch();
 
@@ -17,6 +17,8 @@ const MoviesPage = () => {
 
     return (
         <div>
+            {status === "pending" && <h1>Loading......</h1>}
+            {error && <h2>{error}</h2>}
             <div>
                 {movies.map(movie => <Movie key={movie.id} movie={movie}/>)}
             </div>
