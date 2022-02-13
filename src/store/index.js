@@ -1,3 +1,3 @@
-export * from "./genre.slice";
-export * from "./movie.slice";
+export * from "./genres.slice";
+export * from "./movies.slice";
 export * from "./store";

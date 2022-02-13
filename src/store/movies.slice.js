@@ -1,13 +1,14 @@
+import axios from "axios";
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
 import {moviesService} from "../services";
 
 export const getAllMovies = createAsyncThunk(
-    "movieSlice/getAllMovies",
-    async (_, {dispatch, rejectWithValue})=> {
+    "moviesSlice/getAllMovies",
+    async ({page}, {rejectWithValue})=> {
         try {
             const movies = await moviesService.getAll();
-            return console.log(movies);
+            return movies;
         } catch (e) {
             return rejectWithValue(e.message);
         }
@@ -15,7 +16,7 @@ export const getAllMovies = createAsyncThunk(
 );
 
 export const getSingleMovieById = createAsyncThunk(
-    'movieSlice/getSingleMovieById',
+    'moviesSlice/getSingleMovieById',
     async ({id}, {dispatch, rejectWithValue}) => {
         try {
             const singleMovie = await moviesService.getById(id)
@@ -36,8 +37,8 @@ const initialState = {
 }
 console.log(initialState)
 
-const movieSlice = createSlice({
-    name:"movieSlice",
+const moviesSlice = createSlice({
+    name:"moviesSlice",
     initialState,
     reducers: {
         getMovies: (state, action) => {
@@ -74,7 +75,7 @@ const movieSlice = createSlice({
     }
 })
 
-const movieReducer = movieSlice.reducer;
+const moviesReducer = moviesSlice.reducer;
 
-export default movieReducer;
-export const {getMovies, getSingleMovie, getMoviesByPage} = movieSlice.actions;
+export default moviesReducer;
+export const {getMovies, getSingleMovie, getMoviesByPage} = moviesSlice.actions;

@@ -1,22 +1,30 @@
-import React from "react";
-import {NavLink, Outlet} from "react-router-dom";
+import React, {useEffect} from "react";
+import {useDispatch, useSelector} from "react-redux";
 
 import css from "./Genres.module.css";
+import genresReducer, {getAllGenres} from "../../store/genres.slice";
+import {Genre} from "../../components";
 
 const GenresPage = () => {
+
+    const {genres, status, error} = useSelector(state => state.genresReducer);
+    console.log(genres)
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getAllGenres());
+    }, [])
+
     return (
         <div className={css.Genres}>
+
+            {status === "pending" && <h1>Loading......</h1>}
+            {error && <h2>{error}</h2>}
+
             <h1>20th Century Studios Movies</h1>
-            <NavLink to={'*'}>Featured</NavLink>
-            <NavLink to={'*'}>Action/Adventure</NavLink>
-            <NavLink to={'*'}>Comedy</NavLink>
-            <NavLink to={'*'}>Crime/Mystery</NavLink>
-            <NavLink to={'*'}>Drama</NavLink>
-            <NavLink to={'*'}>Horror</NavLink>
-            <NavLink to={'*'}>Romance</NavLink>
-            <NavLink to={'*'}>Science Fiction</NavLink>
-            <NavLink to={'*'}>Suspense/Thriller</NavLink>
-            <Outlet/>
+
+            {genres.map(genre => <Genre key={genre.id} genre={genre}/>)}
+
         </div>
     );
 };

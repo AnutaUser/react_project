@@ -1,0 +1,19 @@
+.MovieDetails {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.MovieDetailsBtn {
+    background: black;
+    color: whitesmoke;
+    border-radius: 5px;
+}
+
+.MovieDetails>h2 {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 50px;
+    font-weight: bold;
+}

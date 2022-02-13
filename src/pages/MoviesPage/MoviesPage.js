@@ -3,11 +3,12 @@ import {useDispatch, useSelector} from "react-redux";
 
 import {getAllMovies, getMoviesByPage} from "../../store";
 import {Movie} from "../../components";
-import movieReducer from "../../store/movie.slice";
+import moviesReducer from "../../store/movies.slice";
+import css from "./Movies.module.css";
 
 const MoviesPage = () => {
 
-    const {movies, page, status, error} = useSelector(state => state['movieReducer']);
+    const {movies, page, status, error} = useSelector(state => state['moviesReducer']);
     console.log(movies)
 
     const dispatch = useDispatch();
@@ -20,12 +21,8 @@ const MoviesPage = () => {
         <div>
             {status === "pending" && <h1>Loading......</h1>}
             {error && <h2>{error}</h2>}
-            <div>
+            <div className={css.Movies}>
                 {movies.map(movie => <Movie key={movie.id} movie={movie}/>)}
-            </div>
-            <div>
-                <button onClick={()=> dispatch(getMoviesByPage({data:'previous'}))}>Previous page</button>
-                <button onClick={()=>dispatch(getMoviesByPage({data: 'next'}))}>Next page</button>
             </div>
         </div>
     );

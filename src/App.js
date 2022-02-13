@@ -1,7 +1,7 @@
 import React from "react";
 import {Route, Routes} from "react-router-dom";
 
-import {GenresPage, HomePage, MoviesPage, NotFoundPage} from "./pages";
+import {GenresPage, HomePage, MovieDetailsPage, MoviesPage, NotFoundPage} from "./pages";
 import {Layout} from "./components";
 import css from "./App.module.css";
 
@@ -15,7 +15,7 @@ const App = () => {
                     <Route path={'/'} element={<HomePage/>}/>
 
                     <Route path={'movies'} element={<MoviesPage/>}/>
-                    <Route path={'movies/:id'} element={<MoviesPage/>}/>
+                    <Route path={'movies/:id'} element={<MovieDetailsPage/>}/>
                     <Route path={'genres'} element={<GenresPage/>}/>
 
                     <Route path={'*'} element={<NotFoundPage/>}/>
