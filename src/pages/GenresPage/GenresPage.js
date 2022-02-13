@@ -7,8 +7,8 @@ import {Genre} from "../../components";
 
 const GenresPage = () => {
 
-    const {genres, status, error} = useSelector(state => state.genresReducer);
-    console.log(genres)
+    const {genres, status, error} = useSelector(state => state['genresReducer']);
+
     const dispatch = useDispatch();
 
     useEffect(() => {

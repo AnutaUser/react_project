@@ -9,7 +9,6 @@ import css from "./Movies.module.css";
 const MoviesPage = () => {
 
     const {movies, page, status, error} = useSelector(state => state['moviesReducer']);
-    console.log(movies)
 
     const dispatch = useDispatch();
 
