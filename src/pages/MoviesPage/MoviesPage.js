@@ -3,11 +3,12 @@ import {useDispatch, useSelector} from "react-redux";
 
 import {getAllMovies, getMoviesByPage} from "../../store";
 import {Movie} from "../../components";
+import movieReducer from "../../store/movie.slice";
 
 const MoviesPage = () => {
 
     const {movies, page, status, error} = useSelector(state => state['movieReducer']);
-    console.log(state)
+    console.log(movies)
 
     const dispatch = useDispatch();
 

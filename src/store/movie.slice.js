@@ -4,7 +4,7 @@ import {moviesService} from "../services";
 
 export const getAllMovies = createAsyncThunk(
     "movieSlice/getAllMovies",
-    async (page, {dispatch, rejectWithValue})=> {
+    async (_, {dispatch, rejectWithValue})=> {
         try {
             const movies = await moviesService.getAll();
             return console.log(movies);
@@ -34,6 +34,7 @@ const initialState = {
     status: null,
     error: null
 }
+console.log(initialState)
 
 const movieSlice = createSlice({
     name:"movieSlice",
