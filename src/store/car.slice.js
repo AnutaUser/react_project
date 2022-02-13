@@ -41,13 +41,15 @@ export const deleteCarThunk = createAsyncThunk(
     }
 )
 
+
 const carSlice = createSlice({
     name: "carSlice",
-    initialState:{
+    initialState: {
         cars: [],
         status: null,
         error: null
     },
+
     reducers:{
         addCar: (state, action) => {
             console.log(action.payload.data)
