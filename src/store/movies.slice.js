@@ -35,7 +35,6 @@ const initialState = {
     status: null,
     error: null
 }
-console.log(initialState)
 
 const moviesSlice = createSlice({
     name:"moviesSlice",

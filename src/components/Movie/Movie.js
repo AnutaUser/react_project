@@ -4,7 +4,9 @@ import {Link} from "react-router-dom";
 import css from "./Movie.module.css";
 
 const Movie = ({movie}) => {
+
     const {id, original_title, overview, popularity, poster_path} = movie;
+
     return (
         <div className={css.Movie}>
             <img className={css.MovieImg} src={`https://image.tmdb.org/t/p/w400${poster_path}`} alt={original_title}/>

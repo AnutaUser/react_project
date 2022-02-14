@@ -1,9 +1,10 @@
 import React from "react";
 
-const Genre = ({genre}) => {
+const Genre = ({genre:{id, name}}) => {
+
     return (
         <div>
-            Genre
+            <b>{name}</b>
         </div>
     );
 };

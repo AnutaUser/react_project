@@ -1,30 +1,32 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
 import {genresService} from "../services";
-import {logDOM} from "@testing-library/react";
-
 
 export const getAllGenres = createAsyncThunk(
     "genresSlice/getAllGenres",
-    async (_, {rejectedWithValue}) => {
+    async (_, {rejectWithValue})=> {
         try {
             const genres = await genresService.getAll();
             return console.log(genres);
-        }catch (e) {
-            return rejectedWithValue(e.message);
+        } catch (e) {
+            return rejectWithValue(e.message);
         }
     }
 );
 
+const initialState =  {
+    genres: [],
+    status: null,
+    error: null
+}
+
 const genresSlice = createSlice({
     name: "genresSlice",
-    initialState: {
-        genres: [],
-        status: null,
-        error: null
-    },
+    initialState,
     reducers: {
-
+        getGenres: (state, action) => {
+            state.genres = state.action.payload.genres
+        }
     },
     extraReducers: {
         [getAllGenres.pending]: (state, action) => {
@@ -33,7 +35,7 @@ const genresSlice = createSlice({
         },
         [getAllGenres.fulfilled]: (state, action) => {
             state.status = "fulfilled"
-            state.movies = action.payload
+            state.genres = action.payload
         },
         [getAllGenres.rejected]: (state, action) => {
             state.status = "rejected"
@@ -46,3 +48,4 @@ const genresSlice = createSlice({
 const genresReducer = genresSlice.reducer;
 
 export default genresReducer;
+export const {getGenres} = genresSlice.actions;
